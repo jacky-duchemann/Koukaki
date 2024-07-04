@@ -1,0 +1,41 @@
+$primary-color: #333;
+
+body {
+    color: $primary-color;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ajustez la hauteur de la section selon vos besoins */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+        &__video {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+                
+                video {
+                    position: relative;
+                    //z-index: 0;
+                }
+            
+        }
+        img {
+            position: absolute;
+            top: 20px; /* Ajustez la position verticale du logo */
+            left: 20px; /* Ajustez la position horizontale du logo */
+            bottom: 150px;
+            max-width: 100px; /* Ajustez la taille maximale du logo */
+            z-index: 10; /* Assure que le logo est au-dessus de la vidéo */
+            // comment mettre l'image sur la vidéo
+        }
+        
+        
+        
+    }
+

@@ -2,19 +2,17 @@
 
 get_header();
 ?>
-
+    <script src="./scripts/script.js" defer></script>
     <main id="primary" class="site-main">
 
-        <video id="background-video" autoplay loop muted>
+        <section class="banner"> 
+            <div class="banner__video">
+                <video autoplay loop muted>
 
-            <source src="./assets/videos/video-header-koukaki.mp4" type="video/mp4">
-
-        </video>
-
-        <section class="banner">
-        
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
-            
+                    <source src="<?php echo get_template_directory_uri() . './assets/videos/video-header-koukaki.mp4'; ?>" type="video/mp4">
+                </video>
+            </div>
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants"> <!-- trouver la solution pour mettre le logo sur la video --> 
         </section>
         <section id="#story" class="story">
             <h2>L'histoire</h2>
