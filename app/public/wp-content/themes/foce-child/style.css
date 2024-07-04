@@ -10,7 +10,6 @@ body {
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
   background-image: none;
 }
 .banner__video {
@@ -23,11 +22,13 @@ body {
   position: relative;
 }
 .banner img {
-  position: absolute;
+  display: block;
+  position: absolute; /* permet au logo de chevaucher la div banner */
   top: 20px; /* Ajustez la position verticale du logo */
-  left: 20px; /* Ajustez la position horizontale du logo */
+  left: 400px; /* Ajustez la position horizontale du logo */
   bottom: 150px;
-  max-width: 100px; /* Ajustez la taille maximale du logo */
+  width: 45%;
+  margin: auto;
   z-index: 10; /* Assure que le logo est au-dessus de la vidéo */
 }
 
