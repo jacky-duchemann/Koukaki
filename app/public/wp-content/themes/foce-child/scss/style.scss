@@ -1,13 +1,33 @@
-$primary-color: #333;
-
-body {
-    color: $primary-color;
+// mixin pour les responsives //
+@mixin respond-to-ultra-small {
+    @media (max-width: 430px) {
+        @content;
+    }
 }
+@mixin respond-to-small {
+    @media (min-width: 430px) and (max-width: 768px) {
+      @content;
+    }
+  }
 
-.banner {
+@mixin respond-to-medium {
+    @media (min-width: 768px) and (max-width: 1441px) {
+      @content;
+    }
+  }
+
+  
+  @mixin respond-to-large {
+    @media (min-width: 2000px ) {
+        @content;
+    }
+  }
+  
+ 
+  ///////////////////////////////////////
+  .banner {
     position: relative;
     width: 100%;
-    height: 100vh; /* Ajustez la hauteur de la section selon vos besoins */
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -20,9 +40,8 @@ body {
                 
                 video {
                     position: relative;
-                    //z-index: 0;
                 }
-            
+       
         }
         img {
             display: block;
@@ -33,9 +52,73 @@ body {
             width: 45%;
             margin: auto;
             z-index: 10; /* Assure que le logo est au-dessus de la vidéo */
+                @include respond-to-ultra-small {
+                    bottom: 80px;
+                    left: 80px;
+                    width: 180px;
+                }
+                @include respond-to-small {
+                    bottom: 50px;
+                    left: 250px;
+                }
+                @include respond-to-large {
+                    bottom: 200px;
+                }
         }
         
         
         
     }
+    .oscar-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+        img {
+            width: 30%;
+            height: 30%;
+        }
+        h3 {
+            background-image: url("./assets/images/orange_characters_bg.png");
+            background-size: contain;
+            
+        }
+    }
+    /// rotation des fleurs ///
+    
+     //Keyframe de rotation des fleurs ////
+    @keyframes rotate {
+        from {
+      transform: rotate(0deg);
+        }
+        to {
+      transform: rotate(360deg);
+        }
+    }
+    .story {
+        &__article::after {
+            animation: rotate 10s linear infinite;
+        }
+        h2::after {
+            animation: rotate 10s linear infinite;
+        }
+    }
 
+    //Fade in des sections du site //
+  // Keyframe pour le fade in des sections///
+  @keyframes fadeIn {
+        from {
+      opacity: 0;
+        }
+        to {
+      opacity: 1;
+        }
+    }
+    .fade-in-section {
+        opacity: 0;
+        transition: opacity 1s ease-in;
+            &.visible {
+            opacity: 1;
+            animation: fadeIn 1s ease-in;
+            }
+      }

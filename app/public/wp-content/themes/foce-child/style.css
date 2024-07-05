@@ -1,12 +1,7 @@
 @charset "UTF-8";
-body {
-  color: #333;
-}
-
 .banner {
   position: relative;
   width: 100%;
-  height: 100vh; /* Ajustez la hauteur de la section selon vos besoins */
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -30,6 +25,70 @@ body {
   width: 45%;
   margin: auto;
   z-index: 10; /* Assure que le logo est au-dessus de la vidéo */
+}
+@media (max-width: 430px) {
+  .banner img {
+    bottom: 80px;
+    left: 80px;
+    width: 180px;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .banner img {
+    bottom: 50px;
+    left: 250px;
+  }
+}
+@media (min-width: 2000px) {
+  .banner img {
+    bottom: 200px;
+  }
+}
+
+.oscar-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.oscar-section img {
+  width: 30%;
+  height: 30%;
+}
+.oscar-section h3 {
+  background-image: url("./assets/images/orange_characters_bg.png");
+  background-size: contain;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.story__article::after {
+  animation: rotate 10s linear infinite;
+}
+.story h2::after {
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in-section {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+.fade-in-section.visible {
+  opacity: 1;
+  animation: fadeIn 1s ease-in;
 }
 
 /*# sourceMappingURL=style.css.map */
