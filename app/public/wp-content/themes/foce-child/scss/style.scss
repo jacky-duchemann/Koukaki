@@ -25,6 +25,48 @@
   
  
   ///////////////////////////////////////
+  
+   /// rotation des fleurs ///
+    
+     //Keyframe de rotation des fleurs ////
+     @keyframes rotate {
+        from {
+      transform: rotate(0deg);
+        }
+        to {
+      transform: rotate(360deg);
+        }
+    }
+    .story {
+        &__article::after {
+            animation: rotate 10s linear infinite;
+        }
+        h2::after {
+            animation: rotate 10s linear infinite;
+        }
+    }
+
+    // keyframe de flottement du titre //
+    @keyframes float {
+        0% {
+            transform: translate(0%, 0%) translateX(0);
+        }
+        25% {
+            transform: translate(-5%, -5%) translateY(-10px) translateX(30px);
+        }
+        50% {
+            transform: translate(-5%, -5%) translateY(0) translateX(20px); /* Ajustez la distance de flottement */
+        }
+        75% {
+            transform: translate(-5%, -5%) translateY(-10px) translateX(-10px);
+        }
+        100% {
+            transform: translate(0%, 0%) translateX(0);
+        }
+    }
+    ///////////////////////////////////
+    
+    // banniere avec Video en background //
   .banner {
     position: relative;
     width: 100%;
@@ -51,7 +93,9 @@
             bottom: 150px;
             width: 45%;
             margin: auto;
+            transform: translate(-100%, -100%);
             z-index: 10; /* Assure que le logo est au-dessus de la vidéo */
+            animation: float 6s ease-in-out infinite; /* Ajoutez l'animation de flottement */
                 @include respond-to-ultra-small {
                     bottom: 80px;
                     left: 80px;
@@ -69,6 +113,7 @@
         
         
     }
+    // Secion des oscars ajouter pour l'evenement spécial //
     .oscar-section {
         display: flex;
         flex-direction: row;
@@ -84,41 +129,62 @@
             
         }
     }
-    /// rotation des fleurs ///
-    
-     //Keyframe de rotation des fleurs ////
-    @keyframes rotate {
-        from {
-      transform: rotate(0deg);
-        }
-        to {
-      transform: rotate(360deg);
-        }
+   ////////////////////////////////////
+   .slide-in {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: transform 1s ease-out, opacity 1s ease-out;
     }
-    .story {
-        &__article::after {
-            animation: rotate 10s linear infinite;
-        }
-        h2::after {
-            animation: rotate 10s linear infinite;
-        }
+    .before.appear {
+        transition-delay: 0s;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .after.appear {
+        transition-delay: 0.5s;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .appear {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     //Fade in des sections du site //
-  // Keyframe pour le fade in des sections///
-  @keyframes fadeIn {
+  
+    @keyframes fade-in-section {
         from {
-      opacity: 0;
+            opacity: 0;
+            transform: translateY(-180px);
         }
         to {
-      opacity: 1;
+            opacity: 1;
+            transform: translateY(0);
         }
     }
-    .fade-in-section {
-        opacity: 0;
-        transition: opacity 1s ease-in;
-            &.visible {
+    @keyframes fade-in-section-element {
+        from {
+            opacity: 0;
+            transform: translateY(120px);
+        }
+        to {
             opacity: 1;
-            animation: fadeIn 1s ease-in;
+            transform: translateY(0);
+        }
+    }
+    
+    .fade__in__section {
+        opacity: 0;
+        animation: fade-in-section 1s ease forwards;
+            &__element {
+                opacity: 0;
+                transform: translateY(5px); /* Décalage initial vers le bas */
+                transition: opacity 0.5s ease, //transform 0.5s ease;
             }
-      }
+    }
+    .fade__in__section.appear .fade__in__section__element {
+        opacity: 1;
+        transform: translateY(0);
+        animation: fade-in-section-element 3s ease forwards;
+    }

@@ -1,0 +1,19 @@
+[08-Jul-2024 10:06:46 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "my_theme_enqueue_scripts" not found or invalid function name in C:\Users\VENTE\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php:324
+Stack trace:
+#0 C:\Users\VENTE\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#1 C:\Users\VENTE\Local Sites\koukaki\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\Users\VENTE\Local Sites\koukaki\app\public\wp-includes\script-loader.php(2265): do_action('wp_enqueue_scri...')
+#3 C:\Users\VENTE\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php(324): wp_enqueue_scripts('')
+#4 C:\Users\VENTE\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#5 C:\Users\VENTE\Local Sites\koukaki\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\Users\VENTE\Local Sites\koukaki\app\public\wp-includes\general-template.php(3050): do_action('wp_head')
+#7 C:\Users\VENTE\Local Sites\koukaki\app\public\wp-content\themes\foce-child\header.php(20): wp_head()
+#8 C:\Users\VENTE\Local Sites\koukaki\app\public\wp-includes\template.php(810): require_once('C:\\Users\\VENTE\\...')
+#9 C:\Users\VENTE\Local Sites\koukaki\app\public\wp-includes\template.php(745): load_template('C:\\Users\\VENTE\\...', true, Array)
+#10 C:\Users\VENTE\Local Sites\koukaki\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 C:\Users\VENTE\Local Sites\koukaki\app\public\wp-content\themes\foce-child\front-page.php(3): get_header()
+#12 C:\Users\VENTE\Local Sites\koukaki\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\VENTE\\...')
+#13 C:\Users\VENTE\Local Sites\koukaki\app\public\wp-blog-header.php(19): require_once('C:\\Users\\VENTE\\...')
+#14 C:\Users\VENTE\Local Sites\koukaki\app\public\index.php(17): require('C:\\Users\\VENTE\\...')
+#15 {main}
+  thrown in C:\Users\VENTE\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php on line 324
