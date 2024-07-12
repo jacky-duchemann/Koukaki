@@ -23,7 +23,7 @@
     }
   }
   
- 
+  
   ///////////////////////////////////////
   
    /// rotation des fleurs ///
@@ -118,6 +118,8 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: center;
+        width: 90%;
         
         img {
             width: 30%;
@@ -125,14 +127,14 @@
         }
         h3 {
             background-image: url("./assets/images/orange_characters_bg.png");
-            background-size: contain;
-            
+            background-size: cover;
+            background-position: center; 
         }
     }
    ////////////////////////////////////
    .slide-in {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(80px);
         transition: transform 1s ease-out, opacity 1s ease-out;
     }
     .before.appear {
@@ -141,7 +143,7 @@
         transform: translateY(0);
     }
     .after.appear {
-        transition-delay: 0.5s;
+        transition-delay: 1.5s;
         opacity: 1;
         transform: translateY(0);
     }
@@ -156,7 +158,7 @@
     @keyframes fade-in-section {
         from {
             opacity: 0;
-            transform: translateY(-180px);
+            transform: translateY(180px); // les sections arrivent par le haut
         }
         to {
             opacity: 1;
@@ -165,8 +167,8 @@
     }
     @keyframes fade-in-section-element {
         from {
-            opacity: 0;
-            transform: translateY(120px);
+            opacity: 1;
+            transform: translateY(120px); // les elements des sections arrivent par le bas
         }
         to {
             opacity: 1;
@@ -179,12 +181,38 @@
         animation: fade-in-section 1s ease forwards;
             &__element {
                 opacity: 0;
-                transform: translateY(5px); /* Décalage initial vers le bas */
-                transition: opacity 0.5s ease, //transform 0.5s ease;
+                transform: translateY(125px); /* Décalage initial vers le bas */
+                transition: opacity 1s ease; //transform 0.5s ease;
+                //transform: translateY(0);
+                animation: fade-in-section-element 2s ease forwards;
+            }
+        
+        }
+    /*.fade__in__section.appear .fade__in__section__element {
+        opacity: 1;
+        
+    }*/
+
+
+    // carousel avec swiper
+
+    /* Style pour chaque diapositive */
+    .swiper-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        h3 {
+            flex: 0 0 auto; /* Empêche le titre de se développer */
+            margin-bottom: 10px; /* Espacement entre le titre et le contenu */
+        }
+    }    
+    .swiper-slide {
+        text-align: center;
+        figure {
+            margin: 0;
+            }
+        img {
+            max-width: 100%; /* l'image ne dépasse pas la largeur de son conteneur */
             }
     }
-    .fade__in__section.appear .fade__in__section__element {
-        opacity: 1;
-        transform: translateY(0);
-        animation: fade-in-section-element 3s ease forwards;
-    }
+

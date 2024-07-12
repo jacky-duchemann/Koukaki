@@ -1,10 +1,12 @@
 
 // Script pour le parallax entre le titre et la vidéo //
 window.addEventListener('scroll', function() {
-  const parallaxBackground = document.querySelector('.banner__video');
-  let scrollPosition = window.pageYOffset;
-
-  parallaxBackground.style.transform = 'translateY(' + scrollPosition * 0.6 + 'px)'; /* Ajustez 0.5 selon la vitesse souhaitée */
+    //selectionne l'element avec la classe 'banner__video'
+  const parallax = document.querySelector('.banner__video');
+    // Stocke la position actuelle du défilement de la page
+  let scrollPosition = window.scrollY;
+    // Transformation pour deplacer l'element verticalement en fonction de la position du défilement
+  parallax.style.transform = 'translateY(' + scrollPosition * 0.6 + 'px)'; /* Ajustez 0.6 selon la vitesse souhaitée */
 })
 /********************************************/
 
@@ -74,4 +76,32 @@ document.addEventListener("DOMContentLoaded", function() {
   sections.forEach(section => {
       appearOnScroll.observe(section);
   });
+});
+
+
+// Carousel avec swiper 
+
+document.addEventListener('DOMContentLoaded', function () {
+    var mySwiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        mousewheel: true, // Activer le contrôle par molette
+    });
 });

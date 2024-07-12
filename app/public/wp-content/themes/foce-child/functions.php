@@ -16,3 +16,13 @@ if ( get_stylesheet() !== get_template() ) {
     } );
 }
 
+// inclusion des fichiers necesssaires au fonctionnement de Swiper.js
+
+function enqueue_swiper_scripts() {
+    // Enqueue Swiper CSS
+    wp_enqueue_style( 'swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), '6.5.9' );
+
+    // Enqueue Swiper JS
+    wp_enqueue_script( 'swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array('jquery'), '6.5.9', true );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_swiper_scripts' );

@@ -17,3 +17,9 @@ Stack trace:
 #14 C:\Users\VENTE\Local Sites\koukaki\app\public\index.php(17): require('C:\\Users\\VENTE\\...')
 #15 {main}
   thrown in C:\Users\VENTE\Local Sites\koukaki\app\public\wp-includes\class-wp-hook.php on line 324
+[11-Jul-2024 14:37:28 UTC] Erreur d’événement de replanification de tâche pour le crochet wp_privacy_delete_old_export_files. Code d’erreur : could_not_set. Message d’erreur : La liste des évènements planifiés n’a pas pu être sauvegardée.. Données : {"schedule":"hourly","args":[],"interval":3600}
+[12-Jul-2024 10:21:08 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\Users\VENTE\Local Sites\koukaki\app\public\wp-content\themes\foce-child\front-page.php on line 23
+[12-Jul-2024 10:34:54 UTC] PHP Parse error:  syntax error, unexpected token "?", expecting end of file in C:\Users\VENTE\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template-parts\character_slider.php on line 49
+[12-Jul-2024 10:35:11 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\Users\VENTE\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template-parts\character_slider.php on line 50
+[12-Jul-2024 10:35:35 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\Users\VENTE\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template-parts\character_slider.php on line 52
+[12-Jul-2024 10:35:45 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\Users\VENTE\Local Sites\koukaki\app\public\wp-content\themes\foce-child\template-parts\character_slider.php on line 52

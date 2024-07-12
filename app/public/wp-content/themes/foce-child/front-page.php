@@ -12,14 +12,17 @@ get_header();
                     <source src="<?php echo get_template_directory_uri() . './assets/videos/video-header-koukaki.mp4'; ?>" type="video/mp4">
                 </video>
             </div>
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants"> <!-- trouver la solution pour mettre le logo sur la video --> 
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
         </section>
-        <section id="#story" class="story fade__in__section">
-            <h2><span class="slide-in fade__in__section__element">L'histoire</span></h2>
+        <section id="#story" class="story  fade__in__section">
+            <h2><span class="slide-in  fade__in__section__element">L'histoire</span></h2>
             <article id="" class="story__article">
-                <p class="fade__in__section__element"><?php echo get_theme_mod('story'); ?></p>
+                <p  class="fade__in__section"><?php echo get_theme_mod('story'); ?></p>
             </article>
+            <?php get_template_part('template-parts/character_slider'); ?>
             <?php
+            
+            /*
             $args = array(
                 'post_type' => 'characters',
                 'posts_per_page' => -1,
@@ -29,7 +32,7 @@ get_header();
             );
             $characters_query = new WP_Query($args);
             ?>
-            <article id="characters">
+            <article id="characters" class="fade__in__section">
                 <div class="main-character fade__in__section__element">
                     <h3 class="slide-in">Les personnages</h3>
                     <?php
@@ -41,7 +44,7 @@ get_header();
                     $characters_query->next_post();
                     ?>
                 </div>
-                <div class="other-characters fade__in__section__element">
+                <div class="other-characters">
                     <?php
                     while ( $characters_query->have_posts() ) {
                         $characters_query->the_post();
@@ -52,13 +55,14 @@ get_header();
                         echo'</figcaption>';
                         echo '</figure>';
                     }
-                    ?>
-                </div>
-            </article>
-            <article id="place" class="fade__in__section">
-                <div class="fade__in__section__element">
-                    <h3><span class="slide-in">Le Lieu</span></h3>
-                    <p><?php echo get_theme_mod('place'); ?></p>
+                    
+                </div>*/
+                ?>
+            <!--</article>-->
+            <article id="place" class="">
+                <div class="fade__in__section">
+                    <h3><span class="fade__in__section slide-in">Le Lieu</span></h3>
+                    <p class="fade__in__section__element"><?php echo get_theme_mod('place'); ?></p>
                 </div>
 
             </article>
