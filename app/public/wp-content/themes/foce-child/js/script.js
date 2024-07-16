@@ -6,12 +6,48 @@ window.addEventListener('scroll', function() {
     // Stocke la position actuelle du défilement de la page
   let scrollPosition = window.scrollY;
     // Transformation pour deplacer l'element verticalement en fonction de la position du défilement
-  parallax.style.transform = 'translateY(' + scrollPosition * 0.6 + 'px)'; /* Ajustez 0.6 selon la vitesse souhaitée */
+  parallax.style.transform = 'translateY(' + scrollPosition * 0.6 + 'px)'; /* Ajustez 0.6 selon la vitesse souhaitée, ici l'element se deplace a 60% de la vitesse du defilement de la page*/
 })
 /********************************************/
 
 // script pour l'effet d'apparition des titres 
+/*const titles = document.querySelectorAll('.slide-in');
+titles.classList.remove('visible');
 
+const observer = new IntersectionObserver(entries => {
+    // Loop over the entries
+    entries.forEach(entry => {
+        
+      // If the element is visible
+      if (entry.isIntersecting) {
+        // Add the animation class
+        titles.classList.add('visible');
+        observer.unobserve(entry.target);
+        return; // quitte la fonction quand la classe est ajouté 
+      }
+      titles.classList.remove('visible');
+    });
+
+  });
+  titles.forEach((element) => observer.observe(element));*/
+  //observer.observe(document.querySelector('.fade__in__section'));
+  /*document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.slide-in');
+    
+    const handleScroll = () => {
+        //console.log("Ca fonctionne");
+        const windowHeight = window.innerHeight;
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('show');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Run on load in case elements are already visible
+});*/
 document.addEventListener("DOMContentLoaded", function() {
   const sliders = document.querySelectorAll('.slide-in');
 
@@ -46,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   });
 });
-
 // fade*in //
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -104,4 +139,18 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         mousewheel: true, // Activer le contrôle par molette
     });
+});
+
+// Menu burger //
+
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const primaryMenu = document.querySelector('#primary-menu');
+
+  menuToggle.addEventListener('click', function() {
+      primaryMenu.classList.toggle('active');
+      // Met à jour l'état du bouton aria-expanded
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+  });
 });
