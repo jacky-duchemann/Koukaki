@@ -8,7 +8,7 @@ $args = array(
 $characters_query = new WP_Query($args);
 ?>
 <article id="characters" class="fade__in__section swiper-container">
-    <h3 class="fade__in__section__element"><span class="slide-in">Les personnages</span></h3>
+    <h3><span class="slide-on-scroll">Les personnages</span></h3>
     <div class="swiper-wrapper">
         <?php while ($characters_query->have_posts()) : $characters_query->the_post(); ?>
             <div class="swiper-slide">

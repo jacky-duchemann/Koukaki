@@ -10,78 +10,6 @@ window.addEventListener('scroll', function() {
 })
 /********************************************/
 
-// script pour l'effet d'apparition des titres 
-/*const titles = document.querySelectorAll('.slide-in');
-titles.classList.remove('visible');
-
-const observer = new IntersectionObserver(entries => {
-    // Loop over the entries
-    entries.forEach(entry => {
-        
-      // If the element is visible
-      if (entry.isIntersecting) {
-        // Add the animation class
-        titles.classList.add('visible');
-        observer.unobserve(entry.target);
-        return; // quitte la fonction quand la classe est ajouté 
-      }
-      titles.classList.remove('visible');
-    });
-
-  });
-  titles.forEach((element) => observer.observe(element));*/
-  //observer.observe(document.querySelector('.fade__in__section'));
-  /*document.addEventListener('DOMContentLoaded', () => {
-    const elements = document.querySelectorAll('.slide-in');
-    
-    const handleScroll = () => {
-        //console.log("Ca fonctionne");
-        const windowHeight = window.innerHeight;
-        elements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            if (elementTop < windowHeight - 100) {
-                element.classList.add('show');
-            }
-        });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Run on load in case elements are already visible
-});*/
-document.addEventListener("DOMContentLoaded", function() {
-  const sliders = document.querySelectorAll('.slide-in');
-
-  const appearOptions = {
-      threshold: 0,
-      rootMargin: "0px 0px -100px 0px"
-  };
-
-  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              entry.target.classList.add("appear");
-              appearOnScroll.unobserve(entry.target);
-          } else {
-              // Réinitialiser l'état si l'élément sort de la vue
-              entry.target.classList.remove("appear");
-          }
-      });
-  }, appearOptions);
-
-  sliders.forEach(slider => {
-      appearOnScroll.observe(slider);
-  });
-
-  // Ajouter un événement de scroll pour réobserver les éléments à chaque défilement
-  window.addEventListener('scroll', function() {
-      sliders.forEach(slider => {
-          if (!appearOnScroll.rootBounds || appearOnScroll.rootBounds.top < 0) {
-              // Si la racine n'est pas définie ou est hors de la vue, réobserver l'élément
-              appearOnScroll.observe(slider);
-          }
-      });
-  });
-});
 // fade*in //
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -99,21 +27,48 @@ document.addEventListener("DOMContentLoaded", function() {
       rootMargin: "0px 0px -100px 0px"
   };
 
-  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              entry.target.classList.add("appear");
-              appearOnScroll.unobserve(entry.target);
-          }
-      });
-  }, appearOptions);
-
-  sections.forEach(section => {
-      appearOnScroll.observe(section);
-  });
 });
 
+// effet slide-in sur titre 
+// https://blakvghost.medium.com/animation-dapparition-au-d%C3%A9filement-avec-javascript-et-css-65e64e8162f0
+(function () {
+    // Utilisation de la directive "use strict" pour activer le mode strict en JavaScript
+    // Cela implique une meilleure gestion des erreurs et une syntaxe plus stricte pour le code
+    "use strict"
 
+    // Définir la fonction detectAndAnimate pour basculer la classe des éléments
+    const detectAndAnimate = () => {
+        // Sélectionner tous les éléments avec la classe 'animate-on-scroll'
+        const elements = document.querySelectorAll('.slide-on-scroll');
+        // Boucle sur tous les éléments sélectionnés
+        elements.forEach(element => {
+            // Vérifier si l'élément est visible dans la fenêtre du navigateur
+            const isVisible = isElementInViewport(element);
+            // Ajouter ou supprimer la classe 'is-visible' en fonction de la visibilité de l'élément
+            element.classList.toggle('is-visible', isVisible);
+        });
+    };
+    // Définir la fonction isElementInViewport pour vérifier la visibilité de l'élément dans la fenêtre du navigateur
+    const isElementInViewport = el => {
+        // Récupérer les dimensions de l'élément
+        const rect = el.getBoundingClientRect();
+        // Récupérer la hauteur de la fenêtre du navigateur
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        // Récupérer la largeur de la fenêtre du navigateur
+        const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+        // Retourner vrai si l'élément est entièrement visible dans la fenêtre du navigateur, sinon retourner faux
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= viewportHeight &&
+            rect.right <= viewportWidth
+        );
+    };
+    // Écouter l'événement de défilement de la fenêtre du navigateur et appeler la fonction detectAndAnimate
+    window.addEventListener('scroll', detectAndAnimate);
+    // Appeler la fonction detectAndAnimate une fois au démarrage pour mettre à jour l'état des éléments
+    detectAndAnimate();
+})()
 // Carousel avec swiper 
 
 document.addEventListener('DOMContentLoaded', function () {

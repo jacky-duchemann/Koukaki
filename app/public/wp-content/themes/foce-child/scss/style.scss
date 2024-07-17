@@ -25,7 +25,7 @@
   
   
   ///////////////////////////////////////
-  
+ 
    /// rotation des fleurs ///
     
      //Keyframe de rotation des fleurs ////
@@ -46,6 +46,10 @@
         h2::after {
             animation: rotate 10s linear infinite;
         }
+    }
+
+    .site-footer::before {
+        animation: rotate 10s linear infinite;
     }
 
     // keyframe de flottement //
@@ -180,8 +184,6 @@
                 display: flex;
                 flex-direction: column;
                 position: absolute;
-                top: 0; // Ensure it starts at the top
-                //top: 80px;
                 top: 100%; // il se deploie juste sous le header
                 background-color: #FFF5E9;
                 padding: 0px;
@@ -234,9 +236,7 @@
                     bottom: 200px;
                 }
         }
-        
-        
-        
+               
     }
     // Secion des oscars ajouter pour l'evenement spécial //
     .oscar-section {
@@ -250,105 +250,72 @@
             width: 30%;
             height: 30%;
         }
-        span {
-            background-image: url("./assets/images/orange_characters_bg.png");
-            background-size: cover;
+        h3 {
+            background-image: url("./assets/images/orange_oscar_bg.png");
+            background-size: contain;
             background-position: center; 
+            font-size: 30px;
+            padding: 3em 2em;
         }
-    }
-    .story {
-
-        justify-content: center;
-
-        span {
-            animation: slide 1s ease-in-out;
-            background-size: cover;
-            background-position: center; 
-        }
-    }
-   ///////////////Slide-in/////////////////////
-   @keyframes slide {
-    0% {
-        transform: translateY(-100px);
-    }
-    50% {
-        transform: translateY(-25px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-   }
-   h1 h2 h3{
-    animation: slide 1s ease-in-out;
-    //transform: translateY(100px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-   .slide-in.show {
-    //transform: translateY(0);
-    animation: slide 1s ease-in-out;
-}
-   
-    /*.slide-in {
-        opacity: 0;
-        transform: translateY(-100%);
-        transition: opacity 1s ease-out, transform 1s ease-out;
-    }
-
-    .slide-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    /*.slide-in {
-        opacity: 0;
-        transform: translateY(100%);
-        transition: opacity 1s ease-out, transform 1s ease-out;
     }
     
-    .visible {
-        opacity: 1;
-        transform: translateY(0);
-    }*/
 
-    //Fade in des sections du site //
+   // Effet Slide-in sur titre //
+
+    // Pour effet slide titre possible 
+    h1 h2 h3 {
+    overflow: hidden; // Pour contenir les éléments flottants  ici les titres 
+    }
+
+   .slide-on-scroll {
+    /* Définit une opacité initiale de 0 pour les éléments */
+    opacity: 0;
+    /* Definit l'endroit du depart de l'animation - ici 120px en bas de son point d'origine*/
+    transform: translateY(120px);
+    /* Définit une transition d'opacité d'une seconde */
+    transition: opacity 2s ease-in-out, transform 1s ease-in-out;
+        &.slide-on-scroll-delay { // classe supplémentaire pour la deuxieme partie du titre de la section studio
+            transform: translateY(120px);
+            transition: opacity 3s ease-in-out, transform 2s ease-in-out; // la seconde partie du titre de la section studio arrive 1s après la premiere partie
+        }
+        &.is-visible {
+            display: block; // le slide ne fonctionne pas avec les elements inline
+            position: relative;
+            overflow: hidden;
+            opacity: 1;
+            transform: translateY(0); // le titre revient a sa position initial quand il prend la classe "is-visible 
+        }
+    }
+
+    .studio { // pour regler l'affichage du titre de la section studio par rapport a la position des spans - ici positionner cote a cote 
+        h2 {
+            display: flex;
+            flex-direction: row; // - ici positionner cote a cote 
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    }
+   
+
+    // Fade in des sections du site //
   
     @keyframes fade-in-section {
         from {
             opacity: 0;
-            transform: translateY(180px); // les sections arrivent par le haut
+            transform: translateY(180px); // les sections arrivent par le bas
         }
         to {
             opacity: 1;
             transform: translateY(0);
         }
     }
-    @keyframes fade-in-section-element {
-        from {
-            opacity: 1;
-            transform: translateY(120px); // les elements des sections arrivent par le bas
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
+
     .fade__in__section {
         opacity: 0;
         animation: fade-in-section 1s ease forwards;
-            &__element {
-                opacity: 0;
-                transform: translateY(125px); /* Décalage initial vers le bas */
-                transition: opacity 1s ease; //transform 0.5s ease;
-                //transform: translateY(0);
-                animation: fade-in-section-element 2s ease forwards;
-            }
-        
         }
-    /*.fade__in__section.appear .fade__in__section__element {
-        opacity: 1;
-        
-    }*/
-
+    
 
     // carousel avec swiper
 
