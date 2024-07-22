@@ -33,7 +33,7 @@
                 <span class="line"></span>
                 <span class="line"></span>
             </button>
-            <ul id="primary-menu" class="menu">
+            <ul id="primary-menu" class="menu fade__in__menu">
                 <img class="menu__logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
                 <li><a href="#story">Histoire</a></li>
                 <li><a href="#characters">Personnages</a></li>

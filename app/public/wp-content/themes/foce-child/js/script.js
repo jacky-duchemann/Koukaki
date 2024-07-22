@@ -100,15 +100,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.menu-toggle');
-  const primaryMenu = document.querySelector('#primary-menu');
+  const primaryMenu = document.querySelector('.menu');
 
   menuToggle.addEventListener('click', function() {
       primaryMenu.classList.toggle('active');
+     
       // Met à jour l'état du bouton aria-expanded
       const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
       menuToggle.setAttribute('aria-expanded', !isExpanded);
   });
 });
+
+
+//effet slide-out du menu burger
+
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll('.fade__in__menu');
+  
+    // Ajouter un délai progressif pour chaque section
+    sections.forEach((section, index) => {
+        const delay = index * 400; // Délai de 400ms entre chaque section
+        section.style.animationDelay = `${delay}ms`;
+    });
+  
+    // Activer les animations des éléments internes lorsque la section entre dans la vue
+    const appearOptions = {
+        threshold: 0,
+        rootMargin: "0px 0px 100px 0px"
+    };
+  
+  });
+
 
 
 // animation au scroll des nuages 

@@ -32,6 +32,16 @@
     transform: translate(0, 0);
   }
 }
+@keyframes fade-in-menu {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .site-header {
   background-color: #FFD5A2;
   display: flex;
@@ -139,6 +149,7 @@
   padding: 0px;
   width: 100%;
   height: 820px;
+  animation: fade-in-menu 1s ease-in-out forwards;
 }
 
 .banner {
@@ -166,7 +177,6 @@
   bottom: 150px;
   width: 45%;
   margin: auto;
-  transform: translate(-100%, -100%);
   z-index: 10; /* Assure que le logo est au-dessus de la vidéo */
   animation: float 5s ease-in-out infinite; /* Ajoutez l'animation de flottement */
 }
@@ -288,8 +298,9 @@ h1 h2 h3 {
   transform: translateX(0);
   transition: transform 1s cubic-bezier(0, 0.84, 1, 0);
   z-index: 0;
-  bottom: 620px;
+  bottom: 630px;
   left: 450px;
+  filter: blur(9px);
 }
 .story__littleCloud {
   width: 10%;
@@ -300,6 +311,7 @@ h1 h2 h3 {
   z-index: 0;
   bottom: 550px;
   left: 150px;
+  filter: blur(7px);
 }
 
 /*# sourceMappingURL=style.css.map */

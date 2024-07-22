@@ -78,6 +78,18 @@
 
     // Style pour le menu burger //
 
+    //keyframe pour le fade-out du menu burger
+    @keyframes fade-in-menu {
+        from {
+            opacity: 0;
+            transform: translateY(-100px); // le menu arrive par le haut
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     // reste a gerer le responsive pour cette section !!!!!!!!!!!
     .site-header {
         background-color: $background-color;
@@ -111,12 +123,12 @@
             }
         }
         // Menu deplié
+
         .menu {
             display: none;
             list-style: none;
             padding: 0;
             margin: 0;
-    
             li {
                 padding: 5px 0;
     
@@ -187,9 +199,11 @@
                 top: 100%; // il se deploie juste sous le header
                 background-color: #FFF5E9;
                 padding: 0px;
-                width: 100%;
+                width: 100%; // toute la largeur de la page
                 height: 820px;
+                animation: fade-in-menu 1s ease-in-out forwards; // apparition en faede in du menu deployé grace au keyframe fade-out-menu
             }
+           
         }
     }
     ///////////////////////////////////////
@@ -220,7 +234,6 @@
             bottom: 150px;
             width: 45%;
             margin: auto;
-            transform: translate(-100%, -100%);
             z-index: 10; /* Assure que le logo est au-dessus de la vidéo */
             animation: float 5s ease-in-out infinite; /* Ajoutez l'animation de flottement */
                 @include respond-to-ultra-small {
@@ -354,20 +367,22 @@
             height: auto;
             position: relative;
             transform: translateX(0);
-            transition: transform 1s cubic-bezier(0,.84,1,0);
+            transition: transform 1s cubic-bezier(0,.84,1,0); // accelere vite au debut et on ralenti beaucoup a la fin
             z-index: 0;
-            bottom: 620px;
+            bottom: 630px;
             left: 450px;
+            filter: blur(9px); // flouter l'image pour faire plus nuage
         }
         &__littleCloud {
             width: 10%;
             height: auto;
             position: relative;
             transform: translateX(0);
-            transition: transform 1s cubic-bezier(0,.84,1,0);
+            transition: transform 1s cubic-bezier(0,.84,1,0); // accelere vite au debut et on ralenti beaucoup a la fin
             z-index: 0;
             bottom: 550px;
             left: 150px;
+            filter: blur(7px); // flouter l'image pour faire plus nuage
         }
     }
 
