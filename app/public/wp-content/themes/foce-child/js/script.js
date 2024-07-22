@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-// effet slide-in sur titre 
-// https://blakvghost.medium.com/animation-dapparition-au-d%C3%A9filement-avec-javascript-et-css-65e64e8162f0
+// Effet slide-in sur titre 
+
 (function () {
     // Utilisation de la directive "use strict" pour activer le mode strict en JavaScript
     // Cela implique une meilleure gestion des erreurs et une syntaxe plus stricte pour le code
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
             clickable: true,
         },
         navigation: {
-            nextEl: '.swiper-button-next',
+            nextEl: '.swiper-button-next', // classe pour les boutons de navigations si rajout futur 
             prevEl: '.swiper-button-prev',
         },
         mousewheel: true, // Activer le contrôle par molette
@@ -108,4 +108,23 @@ document.addEventListener('DOMContentLoaded', function() {
       const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
       menuToggle.setAttribute('aria-expanded', !isExpanded);
   });
+});
+
+
+// animation au scroll des nuages 
+
+window.addEventListener('scroll', function() {
+    const smallCloud = document.getElementById('little-cloud'); // selectionne mon petit nuage
+    const largeCloud = document.getElementById('big-cloud'); // selectionne mon gros nuage
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollFraction = window.scrollY / maxScroll;
+
+    const maxTranslationSmall = 300; // transition maximum pour le petit nuage
+    const maxTranslationLarge = 300; // transition maximum pour le gros nuage
+
+    const translationSmall = -scrollFraction * maxTranslationSmall;
+    const translationLarge = -scrollFraction * maxTranslationLarge;
+
+    smallCloud.style.transform = `translateX(${translationSmall}px)`;
+    largeCloud.style.transform = `translateX(${translationLarge}px)`;
 });

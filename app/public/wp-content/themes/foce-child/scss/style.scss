@@ -110,7 +110,7 @@
                 background-color: $text-color;
             }
         }
-    
+        // Menu deplié
         .menu {
             display: none;
             list-style: none;
@@ -264,7 +264,7 @@
 
     // Pour effet slide titre possible 
     h1 h2 h3 {
-    overflow: hidden; // Pour contenir les éléments flottants  ici les titres 
+    overflow: hidden; // Pour contenir les éléments flottants - ici les titres 
     }
 
    .slide-on-scroll {
@@ -272,22 +272,22 @@
     opacity: 0;
     /* Definit l'endroit du depart de l'animation - ici 120px en bas de son point d'origine*/
     transform: translateY(120px);
-    /* Définit une transition d'opacité d'une seconde */
-    transition: opacity 2s ease-in-out, transform 1s ease-in-out;
+    /* Définit une transition d'opacité d'une secondes et de transformation d'une seconde = translateY*/
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
         &.slide-on-scroll-delay { // classe supplémentaire pour la deuxieme partie du titre de la section studio
             transform: translateY(120px);
-            transition: opacity 3s ease-in-out, transform 2s ease-in-out; // la seconde partie du titre de la section studio arrive 1s après la premiere partie
+            transition: opacity 2s ease-in-out, transform 1.5s ease-in-out; // la seconde partie du titre de la section studio arrive 1s après la premiere partie
         }
         &.is-visible {
             display: block; // le slide ne fonctionne pas avec les elements inline
             position: relative;
             overflow: hidden;
             opacity: 1;
-            transform: translateY(0); // le titre revient a sa position initial quand il prend la classe "is-visible 
+            transform: translateY(0); // le titre revient a sa position initial quand il prend la classe "is-visible" 
         }
     }
 
-    .studio { // pour regler l'affichage du titre de la section studio par rapport a la position des spans - ici positionner cote a cote 
+    .studio { // pour regler l'affichage du titre de la section studio par rapport a la position des spans - ici positionner cote a cote = "Studio koukaki"
         h2 {
             display: flex;
             flex-direction: row; // - ici positionner cote a cote 
@@ -339,6 +339,36 @@
             }
     }
 
-// Menu burger 
+    // Animations des nuages au scroll de la page 
+
+    .story {
+        
+        &__place {
+            overflow: hidden;
+            //position: fixed;
+            z-index: -1;
+            background-image: url("./assets/images/Studio_Koukaki-image_place.png") !important; // integrer le fond sans nuage 
+        }
+        &__bigCloud {
+            width: 20%;
+            height: auto;
+            position: relative;
+            transform: translateX(0);
+            transition: transform 1s cubic-bezier(0,.84,1,0);
+            z-index: 0;
+            bottom: 620px;
+            left: 450px;
+        }
+        &__littleCloud {
+            width: 10%;
+            height: auto;
+            position: relative;
+            transform: translateX(0);
+            transition: transform 1s cubic-bezier(0,.84,1,0);
+            z-index: 0;
+            bottom: 550px;
+            left: 150px;
+        }
+    }
 
 

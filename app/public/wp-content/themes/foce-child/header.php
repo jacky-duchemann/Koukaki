@@ -40,12 +40,12 @@
                 <li><a href="#place">Lieu</a></li>
                 <li><a href="#studio">Studio Koukaki</a></li>
                 <img class="menu__whiteFlower" src="<?php echo get_template_directory_uri() . '/assets/images/menu-burger/fleur-blanche.png'; ?> " alt="Fleur blanche qui tourne">
-                <img class="menu__hibiscus" src="<?php echo get_template_directory_uri() . '/assets/images/menu-burger/hibiscus.png'; ?> " alt="Fleur blanche qui tourne">
-                <img class="menu__jaakuna" src="<?php echo get_template_directory_uri() . '/assets/images/menu-burger/jaakuna.png'; ?> " alt="Fleur blanche qui tourne">
-                <img class="menu__kawaneko" src="<?php echo get_template_directory_uri() . '/assets/images/menu-burger/kawaneko.png'; ?> " alt="Fleur blanche qui tourne">
-                <img class="menu__orenjiiro" src="<?php echo get_template_directory_uri() . '/assets/images/menu-burger/orenjiiro.png'; ?> " alt="Fleur blanche qui tourne">
-                <img class="menu__orangeFlower" src="<?php echo get_template_directory_uri() . '/assets/images/menu-burger/fleur-orange.png'; ?> " alt="Fleur blanche qui tourne">
-                <img class="menu__orchid" src="<?php echo get_template_directory_uri() . '/assets/images/menu-burger/orchid.png'; ?> " alt="Fleur blanche qui tourne">
+                <img class="menu__hibiscus" src="<?php echo get_template_directory_uri() . '/assets/images/menu-burger/hibiscus.png'; ?> " alt="hibiscus">
+                <img class="menu__jaakuna" src="<?php echo get_template_directory_uri() . '/assets/images/menu-burger/jaakuna.png'; ?> " alt="Jaakuna">
+                <img class="menu__kawaneko" src="<?php echo get_template_directory_uri() . '/assets/images/menu-burger/kawaneko.png'; ?> " alt="Kawaneko">
+                <img class="menu__orenjiiro" src="<?php echo get_template_directory_uri() . '/assets/images/menu-burger/orenjiiro.png'; ?> " alt="Orenjiiro">
+                <img class="menu__orangeFlower" src="<?php echo get_template_directory_uri() . '/assets/images/menu-burger/fleur-orange.png'; ?> " alt="Fleur orange qui tourne">
+                <img class="menu__orchid" src="<?php echo get_template_directory_uri() . '/assets/images/menu-burger/orchid.png'; ?> " alt="Orchidée">
             </ul>
 
 		</nav><!-- #site-navigation -->

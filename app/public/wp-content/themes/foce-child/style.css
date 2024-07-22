@@ -217,12 +217,12 @@ h1 h2 h3 {
   opacity: 0;
   /* Definit l'endroit du depart de l'animation - ici 120px en bas de son point d'origine*/
   transform: translateY(120px);
-  /* Définit une transition d'opacité d'une seconde */
-  transition: opacity 2s ease-in-out, transform 1s ease-in-out;
+  /* Définit une transition d'opacité d'une secondes et de transformation d'une seconde = translateY*/
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 .slide-on-scroll.slide-on-scroll-delay {
   transform: translateY(120px);
-  transition: opacity 3s ease-in-out, transform 2s ease-in-out;
+  transition: opacity 2s ease-in-out, transform 1.5s ease-in-out;
 }
 .slide-on-scroll.is-visible {
   display: block;
@@ -274,6 +274,32 @@ h1 h2 h3 {
 }
 .swiper-slide img {
   max-width: 100%; /* l'image ne dépasse pas la largeur de son conteneur */
+}
+
+.story__place {
+  overflow: hidden;
+  z-index: -1;
+  background-image: url("./assets/images/Studio_Koukaki-image_place.png") !important;
+}
+.story__bigCloud {
+  width: 20%;
+  height: auto;
+  position: relative;
+  transform: translateX(0);
+  transition: transform 1s cubic-bezier(0, 0.84, 1, 0);
+  z-index: 0;
+  bottom: 620px;
+  left: 450px;
+}
+.story__littleCloud {
+  width: 10%;
+  height: auto;
+  position: relative;
+  transform: translateX(0);
+  transition: transform 1s cubic-bezier(0, 0.84, 1, 0);
+  z-index: 0;
+  bottom: 550px;
+  left: 150px;
 }
 
 /*# sourceMappingURL=style.css.map */
