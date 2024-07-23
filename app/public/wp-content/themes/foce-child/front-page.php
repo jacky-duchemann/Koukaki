@@ -11,8 +11,9 @@ get_header();
 
                     <source src="<?php echo get_template_directory_uri() . './assets/videos/video-header-koukaki.mp4'; ?>" type="video/mp4">
                 </video>
+                
             </div>
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+            <img class="banner__video__img" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="Fond de la banniere pour mobile">
         </section>
         <section id="#story" class="story  fade__in__section">
             <h2><span class="slide-on-scroll">L'histoire</span></h2>

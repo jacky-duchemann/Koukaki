@@ -47,6 +47,14 @@
             animation: rotate 10s linear infinite;
         }
     }
+    .studio {
+        h2::before {
+            animation: rotate 10s linear infinite;
+        }
+        h2::after {
+            animation: rotate 8s linear infinite;
+        }
+    }
 
     .site-footer::before {
         animation: rotate 10s linear infinite;
@@ -214,7 +222,7 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    background-image: none;
+    background-image: url('assets/images/banner.png') no-repeat center; // image en fallback si la vidéo n'est pas lu par le navigateur / en mobile la vidéo est desactive donc il y aura cette image en fond 
         &__video {
             position: relative;
             width: 100%;
@@ -222,10 +230,17 @@
             overflow: hidden;
                 
                 video {
-                    position: relative;
+                    position: relative; 
+                    @include respond-to-ultra-small {
+                        display: none;
+                    }       
                 }
-       
+    
         }
+    /*@include respond-to-ultra-small {
+        background-image: url(./assets/images/banner.png);
+        background-size: cover;
+    }*/
         img {
             display: block;
             position: absolute; /* permet au logo de chevaucher la div banner */
