@@ -79,6 +79,30 @@
   width: 25px;
   height: 3px;
   background-color: #111111;
+  position: absolute;
+  transition: transform 0.3s, opacity 0.3s;
+  gap: 5px;
+}
+.main-navigation .menu-toggle .line:nth-child(1) {
+  top: 35%;
+}
+.main-navigation .menu-toggle .line.line:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.main-navigation .menu-toggle .line:nth-child(3) {
+  bottom: 30%;
+}
+.main-navigation .menu-toggle.open .line:first-child {
+  transform: rotate(45deg);
+  top: 50%;
+}
+.main-navigation .menu-toggle.open .line:nth-child(2) {
+  opacity: 0;
+}
+.main-navigation .menu-toggle.open .line:last-child {
+  transform: rotate(-45deg);
+  top: 50%;
 }
 .main-navigation .menu {
   display: none;

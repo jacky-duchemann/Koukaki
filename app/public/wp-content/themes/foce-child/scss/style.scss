@@ -98,6 +98,8 @@
         }
     }
 
+
+
     // reste a gerer le responsive pour cette section !!!!!!!!!!!
     .site-header {
         background-color: $background-color;
@@ -128,8 +130,37 @@
                 width: $burger-width;
                 height: $burger-height;
                 background-color: $text-color;
+                position: absolute;
+                transition: transform 0.3s, opacity 0.3s;
+                gap: 5px;
+                    &:nth-child(1) { // mise en forme du burger 
+                        top: 35%;
+                    }
+                    &.line:nth-child(2) {
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                    &:nth-child(3) {
+                        bottom: 30%;
+                    }
+            }
+
+            &.open { // classe ajouter pour la transformation du burger en croix
+                .line:first-child {
+                    transform: rotate(45deg);
+                    top: 50%; 
+                }
+                .line:nth-child(2) {
+                    opacity: 0;
+                }
+                .line:last-child {
+                    transform: rotate(-45deg);
+                    top: 50%;
+                }
             }
         }
+
+       
         // Menu deplié
 
         .menu {

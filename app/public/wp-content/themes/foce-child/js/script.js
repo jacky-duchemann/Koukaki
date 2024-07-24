@@ -131,6 +131,13 @@ document.addEventListener("DOMContentLoaded", function() {
   
   });
 
+  // transformation du menu burger - l'ajout de la classe open transforme le burger ne croix quand le menu est déployé
+  const menuToggle = document.querySelector('.menu-toggle');
+
+    menuToggle.addEventListener('click', function() {
+    menuToggle.classList.toggle('open');
+    console.log("Ajoute la classe open au menu toggle au clique !");
+});
 
 
 // animation au scroll des nuages 
