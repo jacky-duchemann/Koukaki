@@ -54,9 +54,30 @@
   display: flex;
   position: relative;
 }
+@media (max-width: 430px) {
+  .site-header {
+    width: 100%;
+    height: 60px;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .site-header {
+    height: 80px;
+  }
+}
 
 .site-title {
   margin-left: 35%;
+}
+@media (max-width: 430px) {
+  .site-title {
+    display: none;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .site-title {
+    display: none;
+  }
 }
 
 .main-navigation {
@@ -118,11 +139,31 @@
   text-decoration: none;
   font-size: 64px;
 }
+@media (max-width: 430px) {
+  .main-navigation .menu li a {
+    font-size: 30px;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .main-navigation .menu li a {
+    font-size: 40px;
+  }
+}
 .main-navigation .menu li a:hover {
   text-shadow: 0.05em 0.05em 0.2em #FF5C00;
 }
 .main-navigation .menu__logo {
   width: 10%;
+}
+@media (max-width: 430px) {
+  .main-navigation .menu__logo {
+    width: 30%;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .main-navigation .menu__logo {
+    width: 30%;
+  }
 }
 .main-navigation .menu__whiteFlower {
   width: 10%;
@@ -131,11 +172,31 @@
   left: 450px;
   animation: rotate 10s linear infinite;
 }
+@media (max-width: 430px) {
+  .main-navigation .menu__whiteFlower {
+    display: none;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .main-navigation .menu__whiteFlower {
+    display: none;
+  }
+}
 .main-navigation .menu__hibiscus {
   width: 30%;
   position: relative;
   left: 500px;
   bottom: 300px;
+}
+@media (max-width: 430px) {
+  .main-navigation .menu__hibiscus {
+    display: none;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .main-navigation .menu__hibiscus {
+    display: none;
+  }
 }
 .main-navigation .menu__jaakuna {
   width: 10%;
@@ -144,12 +205,40 @@
   left: 400px;
   animation: float 2s ease-in-out infinite;
 }
+@media (max-width: 430px) {
+  .main-navigation .menu__jaakuna {
+    bottom: 355px;
+    left: -100px;
+    width: 15%;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .main-navigation .menu__jaakuna {
+    bottom: 355px;
+    left: -180px;
+    width: 15%;
+  }
+}
 .main-navigation .menu__kawaneko {
   width: 10%;
   position: relative;
   bottom: 1100px;
   right: 380px;
   animation: float 4s ease-in-out infinite;
+}
+@media (max-width: 430px) {
+  .main-navigation .menu__kawaneko {
+    bottom: 210px;
+    left: 80px;
+    width: 15%;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .main-navigation .menu__kawaneko {
+    bottom: 355px;
+    left: 190px;
+    width: 15%;
+  }
 }
 .main-navigation .menu__orenjiiro {
   width: 8%;
@@ -158,6 +247,20 @@
   right: 520px;
   animation: float 6s ease-in-out infinite;
 }
+@media (max-width: 430px) {
+  .main-navigation .menu__orenjiiro {
+    bottom: -130px;
+    left: -120px;
+    width: 15%;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .main-navigation .menu__orenjiiro {
+    bottom: 235px;
+    left: -180px;
+    width: 15%;
+  }
+}
 .main-navigation .menu__orangeFlower {
   width: 5%;
   position: relative;
@@ -165,11 +268,35 @@
   right: 420px;
   animation: rotate 10s linear infinite;
 }
+@media (max-width: 430px) {
+  .main-navigation .menu__orangeFlower {
+    bottom: 150px;
+    left: 0;
+    width: 25%;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .main-navigation .menu__orangeFlower {
+    bottom: 255px;
+    left: 0;
+    width: 30%;
+  }
+}
 .main-navigation .menu__orchid {
   width: 5%;
   position: relative;
   bottom: 1450px;
   right: 680px;
+}
+@media (max-width: 430px) {
+  .main-navigation .menu__orchid {
+    display: none;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .main-navigation .menu__orchid {
+    display: none;
+  }
 }
 .main-navigation .menu.active {
   display: flex;
@@ -181,6 +308,11 @@
   width: 100%;
   height: 820px;
   animation: fade-in-menu 1s ease-in-out forwards;
+}
+@media (max-width: 430px) {
+  .main-navigation .menu.active {
+    text-align: center;
+  }
 }
 
 .banner {
@@ -223,8 +355,8 @@
 @media (max-width: 430px) {
   .banner img {
     bottom: 80px;
-    left: 80px;
-    width: 180px;
+    left: 10%;
+    width: 280px;
   }
 }
 @media (min-width: 430px) and (max-width: 768px) {
@@ -236,6 +368,11 @@
 @media (min-width: 2000px) {
   .banner img {
     bottom: 200px;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .banner {
+    width: 100%;
   }
 }
 

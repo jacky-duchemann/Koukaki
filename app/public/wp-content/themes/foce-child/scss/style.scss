@@ -24,6 +24,7 @@
   }
   
   
+  
   ///////////////////////////////////////
  
    /// rotation des fleurs ///
@@ -105,9 +106,22 @@
         background-color: $background-color;
         display: flex;
         position: relative;
+        @include respond-to-ultra-small {
+            width: 100%;
+            height: 60px;
+        }
+        @include respond-to-small {
+            height: 80px;
+        }
     }
     .site-title {
         margin-left: 35%;
+        @include respond-to-ultra-small {
+            display: none;
+        }
+        @include respond-to-small {
+            display: none;
+        }
     }
     .main-navigation {
         display: flex;
@@ -175,6 +189,12 @@
                     color: $text-color;
                     text-decoration: none;
                     font-size: 64px;
+                    @include respond-to-ultra-small {
+                        font-size: 30px;
+                    }
+                    @include respond-to-small {
+                        font-size: 40px;
+                    }
                 }
                 a:hover {
                     text-shadow: 0.05em 0.05em 0.2em #FF5C00; // au passage de la souris il y a un reflet orange flouté sur les liens
@@ -183,6 +203,12 @@
             }
             &__logo { // image dans le menu deroulant
                 width: 10%;
+                @include respond-to-ultra-small {
+                    width: 30%;
+                }
+                @include respond-to-small {
+                    width: 30%;
+                }
             }
             &__whiteFlower { // fleur blanche qui tourne
                 width: 10%;
@@ -190,12 +216,24 @@
                 bottom: 450px;
                 left: 450px;
                 animation: rotate 10s linear infinite;
+                @include respond-to-ultra-small {
+                    display: none;
+                }
+                @include respond-to-small {
+                    display: none;
+                }
             }
             &__hibiscus { // fleur en bas a droite du menu
                 width: 30%;
                 position: relative;
                 left: 500px;
                 bottom: 300px;
+                @include respond-to-ultra-small {
+                    display: none;
+                }
+                @include respond-to-small {
+                    display: none;
+                }
             }
             &__jaakuna { 
                 width: 10%;
@@ -203,6 +241,16 @@
                 bottom: 800px;
                 left: 400px;
                 animation: float 2s ease-in-out infinite; // faire flotter le personnage
+                @include respond-to-ultra-small {
+                    bottom: 355px;
+                    left: -100px;
+                    width: 15%;
+                }
+                @include respond-to-small {
+                    bottom: 355px;
+                    left: -180px;
+                    width: 15%;
+                }
             }
             &__kawaneko { 
                 width: 10%;
@@ -210,6 +258,16 @@
                 bottom: 1100px;
                 right: 380px;
                 animation: float 4s ease-in-out infinite; // faire flotter le personnage
+                @include respond-to-ultra-small {
+                    bottom: 210px;
+                    left: 80px;
+                    width: 15%;
+                }
+                @include respond-to-small {
+                    bottom: 355px;
+                    left: 190px;
+                    width: 15%;
+                }
             }
             &__orenjiiro { 
                 width: 8%;
@@ -217,6 +275,16 @@
                 bottom: 730px;
                 right: 520px;
                 animation: float 6s ease-in-out infinite; // faire flotter le personnage
+                @include respond-to-ultra-small {
+                    bottom: -130px;
+                    left: -120px;
+                    width: 15%;
+                }
+                @include respond-to-small {
+                    bottom: 235px;
+                    left: -180px;
+                    width: 15%;
+                }
             }
             &__orangeFlower { 
                 width: 5%;
@@ -224,12 +292,28 @@
                 bottom: 1100px;
                 right: 420px;
                 animation: rotate 10s linear infinite; // rotation de la fleur
+                @include respond-to-ultra-small {
+                    bottom: 150px;
+                    left: 0;
+                    width: 25%;
+                }
+                @include respond-to-small {
+                    bottom: 255px;
+                    left: 0;
+                    width: 30%;
+                }
             }
             &__orchid { 
                 width: 5%;
                 position: relative;
                 bottom: 1450px;
                 right: 680px;
+                @include respond-to-ultra-small {
+                    display: none;
+                }
+                @include respond-to-small {
+                    display: none;
+                }
             }
             &.active {
                 display: flex;
@@ -240,9 +324,12 @@
                 padding: 0px;
                 width: 100%; // toute la largeur de la page
                 height: 820px;
-                animation: fade-in-menu 1s ease-in-out forwards; // apparition en faede in du menu deployé grace au keyframe fade-out-menu
+                animation: fade-in-menu 1s ease-in-out forwards; // apparition en faede in du menu deployé grace au keyframe fade-in-menu
+                @include respond-to-ultra-small {
+                    text-align: center;
+                }
             }
-           
+            
         }
     }
     ///////////////////////////////////////
@@ -254,6 +341,7 @@
     display: flex;
     justify-content: center;
     background-image: url('assets/images/banner.png') no-repeat center; // image en fallback si la vidéo n'est pas lu par le navigateur / en mobile la vidéo est desactive donc il y aura cette image en fond 
+
         &__video {
             position: relative;
             width: 100%;
@@ -284,8 +372,8 @@
             animation: float 5s ease-in-out infinite; /* Ajoutez l'animation de flottement */
                 @include respond-to-ultra-small {
                     bottom: 80px;
-                    left: 80px;
-                    width: 180px;
+                    left: 10%;
+                    width: 280px;
                 }
                 @include respond-to-small {
                     bottom: 50px;
@@ -294,6 +382,9 @@
                 @include respond-to-large {
                     bottom: 200px;
                 }
+        }
+        @include respond-to-small {
+            width: 100%;
         }
                
     }

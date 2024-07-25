@@ -110,33 +110,12 @@ document.addEventListener('DOMContentLoaded', function() {
       menuToggle.setAttribute('aria-expanded', !isExpanded);
   });
 });
-
-
-//effet slide-out du menu burger
-
-document.addEventListener("DOMContentLoaded", function() {
-    const sections = document.querySelectorAll('.fade__in__menu');
-  
-    // Ajouter un délai progressif pour chaque section
-    sections.forEach((section, index) => {
-        const delay = index * 400; // Délai de 400ms entre chaque section
-        section.style.animationDelay = `${delay}ms`;
-    });
-  
-    // Activer les animations des éléments internes lorsque la section entre dans la vue
-    const appearOptions = {
-        threshold: 0,
-        rootMargin: "0px 0px 100px 0px"
-    };
-  
-  });
-
-  // transformation du menu burger - l'ajout de la classe open transforme le burger ne croix quand le menu est déployé
+// transformation du menu burger - l'ajout de la classe open transforme le burger ne croix quand le menu est déployé
   const menuToggle = document.querySelector('.menu-toggle');
 
     menuToggle.addEventListener('click', function() {
-    menuToggle.classList.toggle('open');
-    console.log("Ajoute la classe open au menu toggle au clique !");
+    menuToggle.classList.toggle('open'); // chaque fois que l'élément avec la classe menu-toggle est cliqué, la classe open est ajoutée s'il ne la possède pas déjà, ou supprimée s'il la possède.
+    console.log("Ajoute la classe open au menu toggle");
 });
 
 
