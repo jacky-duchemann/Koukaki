@@ -10,8 +10,18 @@
 .story__article::after {
   animation: rotate 10s linear infinite;
 }
+@media (max-width: 430px) {
+  .story__article::after {
+    display: none;
+  }
+}
 .story h2::after {
   animation: rotate 10s linear infinite;
+}
+@media (max-width: 430px) {
+  .story h2::after {
+    display: none;
+  }
 }
 
 .studio h2::before {
@@ -383,9 +393,37 @@
   justify-content: center;
   width: 90%;
 }
+@media (max-width: 430px) {
+  .oscar-section {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .oscar-section {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+  }
+}
 .oscar-section img {
   width: 30%;
   height: 30%;
+}
+@media (max-width: 430px) {
+  .oscar-section img {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+  }
+}
+@media (min-width: 430px) and (max-width: 768px) {
+  .oscar-section img {
+    width: 70%;
+    height: 70%;
+    margin: auto;
+  }
 }
 .oscar-section h3 {
   background-image: url("./assets/images/orange_oscar_bg.png");
@@ -393,6 +431,11 @@
   background-position: center;
   font-size: 30px;
   padding: 3em 2em;
+}
+@media (max-width: 430px) {
+  .oscar-section h3 {
+    font-size: 15px;
+  }
 }
 
 h1 h2 h3 {
@@ -426,6 +469,21 @@ h1 h2 h3 {
   justify-content: center;
   gap: 10px;
 }
+@media (max-width: 430px) {
+  .studio h2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 430px) {
+  .studio h2::before {
+    display: none;
+  }
+}
+@media (max-width: 430px) {
+  .studio h2::after {
+    display: none;
+  }
+}
 
 @keyframes fade-in-section {
   from {
@@ -452,6 +510,11 @@ h1 h2 h3 {
   flex: 0 0 auto;
   margin-bottom: 10px; /* Espacement entre le titre et les sliders */
 }
+@media (max-width: 430px) {
+  .swiper-container h3 {
+    font-size: 20px;
+  }
+}
 
 .swiper-slide {
   text-align: center;
@@ -463,10 +526,30 @@ h1 h2 h3 {
   max-width: 100%; /* l'image ne dépasse pas la largeur de son conteneur */
 }
 
+@media (max-width: 430px) {
+  .story h2 {
+    font-size: 25px;
+  }
+}
 .story__place {
   overflow: hidden;
   z-index: -1;
   background-image: url("./assets/images/Studio_Koukaki-image_place.png") !important;
+}
+@media (max-width: 430px) {
+  .story__place h3 {
+    font-size: 20px;
+    position: absolute;
+    bottom: 225px;
+    left: 30px;
+  }
+}
+@media (max-width: 430px) {
+  .story__place p {
+    font-size: 12px;
+    position: absolute;
+    bottom: -225px;
+  }
 }
 .story__bigCloud {
   width: 20%;
@@ -479,6 +562,11 @@ h1 h2 h3 {
   left: 450px;
   filter: blur(9px);
 }
+@media (max-width: 430px) {
+  .story__bigCloud {
+    display: none;
+  }
+}
 .story__littleCloud {
   width: 10%;
   height: auto;
@@ -489,6 +577,11 @@ h1 h2 h3 {
   bottom: 550px;
   left: 150px;
   filter: blur(7px);
+}
+@media (max-width: 430px) {
+  .story__littleCloud {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

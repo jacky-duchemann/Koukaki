@@ -28,9 +28,6 @@ get_header();
                     <h3><span class="slide-on-scroll">Le Lieu</span></h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
-                <!--<div class="story__place__bigCloud" id="clouds"></div>
-                <div class="story__place__littleCloud" id="clouds"></div>-->
-                
             </article>
             <img class="story__bigCloud" id="big-cloud" src=<?php echo get_template_directory_uri() . '/assets/images/big_cloud.png'; ?> " alt="Gros nuage qui défile">
             <img class="story__littleCloud" id="little-cloud" src="<?php echo get_template_directory_uri() . '/assets/images/little_cloud.png'; ?> " alt="Gros nuage qui défile">
