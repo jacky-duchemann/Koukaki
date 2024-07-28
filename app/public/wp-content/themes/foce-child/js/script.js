@@ -110,11 +110,11 @@ document.addEventListener('DOMContentLoaded', function() {
       menuToggle.setAttribute('aria-expanded', !isExpanded);
   });
 });
-// transformation du menu burger - l'ajout de la classe open transforme le burger ne croix quand le menu est déployé
+// transformation du bouton du menu burger - l'ajout de la classe open transforme le burger en croix quand le menu est déployé
   const menuToggle = document.querySelector('.menu-toggle');
 
     menuToggle.addEventListener('click', function() {
-    menuToggle.classList.toggle('open'); // chaque fois que l'élément avec la classe menu-toggle est cliqué, la classe open est ajoutée s'il ne la possède pas déjà, ou supprimée s'il la possède.
+    menuToggle.classList.toggle('open'); // quand le menu burger est cliqué, la classe open est ajoutée s'il ne la possède pas déjà, ou supprimée s'il la possède.
     console.log("Ajoute la classe open au menu toggle");
 });
 
@@ -122,17 +122,20 @@ document.addEventListener('DOMContentLoaded', function() {
 // animation au scroll des nuages 
 
 window.addEventListener('scroll', function() {
-    const smallCloud = document.getElementById('little-cloud'); // selectionne mon petit nuage
-    const largeCloud = document.getElementById('big-cloud'); // selectionne mon gros nuage
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollFraction = window.scrollY / maxScroll;
+    const smallCloud = document.getElementById('little-cloud');
+    const largeCloud = document.getElementById('big-cloud');
+    const place = document.getElementById('place');
 
-    const maxTranslationSmall = 300; // transition maximum pour le petit nuage
-    const maxTranslationLarge = 300; // transition maximum pour le gros nuage
+    const maxTranslationSmall = 100; // maximum translation for the little cloud
+    const maxTranslationLarge = 100; // maximum translation for the big cloud
 
-    const translationSmall = -scrollFraction * maxTranslationSmall;
-    const translationLarge = -scrollFraction * maxTranslationLarge;
+    
+        const maxScroll = place.scrollHeight - window.innerHeight;
+        const scrollFraction = (window.scrollY - place.offsetTop) / maxScroll;
+        const translationSmall = scrollFraction * maxTranslationSmall;
+        const translationLarge = scrollFraction * maxTranslationLarge;
 
-    smallCloud.style.transform = `translateX(${translationSmall}px)`;
-    largeCloud.style.transform = `translateX(${translationLarge}px)`;
-});
+        smallCloud.style.transform = `translateX(${translationSmall}px)`;
+        largeCloud.style.transform = `translateX(${translationLarge}px)`;
+    
+})
