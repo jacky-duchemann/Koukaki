@@ -20,22 +20,12 @@ document.addEventListener("DOMContentLoaded", function() {
       const delay = index * 400; // Délai de 400ms entre chaque section
       section.style.animationDelay = `${delay}ms`;
   });
-
-  // Activer les animations des éléments internes lorsque la section entre dans la vue
-  const appearOptions = {
-      threshold: 0,
-      rootMargin: "0px 0px -100px 0px"
-  };
-
 });
 
 // Effet slide-in sur titre 
 
 (function () {
-    // Utilisation de la directive "use strict" pour activer le mode strict en JavaScript
-    // Cela implique une meilleure gestion des erreurs et une syntaxe plus stricte pour le code
-    "use strict"
-
+    
     // Définir la fonction detectAndAnimate pour basculer la classe des éléments
     const detectAndAnimate = () => {
         // Sélectionner tous les éléments avec la classe 'animate-on-scroll'
@@ -126,12 +116,12 @@ window.addEventListener('scroll', function() {
     const largeCloud = document.getElementById('big-cloud');
     const place = document.getElementById('place');
 
-    const maxTranslationSmall = 100; // maximum translation for the little cloud
-    const maxTranslationLarge = 100; // maximum translation for the big cloud
+    const maxTranslationSmall = 100;
+    const maxTranslationLarge = 100; 
 
     
-        const maxScroll = place.scrollHeight - window.innerHeight;
-        const scrollFraction = (window.scrollY - place.offsetTop) / maxScroll;
+        const maxScroll = place.scrollHeight - window.innerHeight; 
+        const scrollFraction = (window.scrollY - place.offsetTop) / maxScroll; // calcul le scroll en fonction de la hauteur de la section lieu
         const translationSmall = scrollFraction * maxTranslationSmall;
         const translationLarge = scrollFraction * maxTranslationLarge;
 

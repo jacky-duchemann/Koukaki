@@ -105,9 +105,6 @@
         }
     }
 
-
-
-    // reste a gerer le responsive pour cette section !!!!!!!!!!!
     .site-header {
         background-color: $background-color;
         display: flex;
@@ -390,7 +387,8 @@
         }
                
     }
-    // Secion des oscars ajouter pour l'evenement spécial //
+
+    // Secion Nomination aux oscars ajouté comme évenement spécial //
     .oscar-section {
         display: flex;
         flex-direction: row;
@@ -578,8 +576,6 @@
             width: 20%;
             height: auto;
             position: relative;
-            transform: translateX(0);
-            transition: transform 1s cubic-bezier(0,.84,1,0); // accelere vite au debut et on ralenti beaucoup a la fin
             z-index: 0;
             bottom: 630px;
             left: 450px;
@@ -592,8 +588,6 @@
             width: 10%;
             height: auto;
             position: relative;
-            transform: translateX(0);
-            transition: transform 1s cubic-bezier(0,.84,1,0); // accelere vite au debut et on ralenti beaucoup a la fin
             z-index: 0;
             bottom: 550px;
             left: 150px;
