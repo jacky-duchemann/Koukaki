@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Définir la fonction detectAndAnimate pour basculer la classe des éléments
     const detectAndAnimate = () => {
-        // Sélectionner tous les éléments avec la classe 'animate-on-scroll'
+        // Sélectionner tous les éléments avec la classe 'slide-on-scroll'
         const elements = document.querySelectorAll('.slide-on-scroll');
         // Boucle sur tous les éléments sélectionnés
         elements.forEach(element => {

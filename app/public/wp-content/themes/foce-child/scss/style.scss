@@ -62,11 +62,20 @@
             animation: rotate 8s linear infinite;
         }
     }
-
+    // fleur du footer 
     .site-footer::before {
         animation: rotate 10s linear infinite;
     }
 
+    .site-footer::after {
+        animation: rotate 10s linear infinite; 
+    }
+
+    .site-footer {
+        ul::after {
+            animation: rotate 10s linear infinite;
+        }
+    }
     // keyframe de flottement //
     @keyframes float {
         0% {
@@ -581,6 +590,9 @@
             left: 450px;
             filter: blur(9px); // flouter l'image pour faire plus nuage
             @include respond-to-ultra-small {
+                display: none;
+            }
+            @include respond-to-small {
                 display: none;
             }
         }
